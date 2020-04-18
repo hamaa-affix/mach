@@ -7,6 +7,7 @@ use App\Services\CheckExtensionServices;
 use App\Services\FileUploadServices; 
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
 use App\User;
 
 class UserController extends Controller
@@ -28,7 +29,7 @@ class UserController extends Controller
     }
     
     //データの更新処理
-    public function update(Request $request, $id)
+    public function update($id, ProfileRequest $request)
     {
 
         $user = User::findorFail($id);
