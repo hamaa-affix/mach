@@ -21,7 +21,8 @@
     
       <div class='userAction'>
         <div class="userAction_edit userAction_common">
-          <i class="fas fa-edit fa-2x"></i>
+          <!--editへのroute追加-->
+          <a href="/users/edit/{{$user->id}}"><i class="fas fa-edit fa-2x"></i></a>
           <span>情報を編集</span>
         </div>
         <div class='userAction_logout userAction_common'>
