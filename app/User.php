@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        //login情報はここの変数に代入してある内容だけ、保存できる。
+        'name', 'email', 'password', 'self_introduction', 'sex', 'img_name'
     ];
 
     /**

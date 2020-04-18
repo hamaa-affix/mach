@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
+});
+
+Route::group(['prefix' => 'users', 'middleware' => 'auth'], function () {
+    Route::get('show/{id}', 'UserController@show')->name('users.show');
 });
 
 Auth::routes();
