@@ -25,7 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all(); 
+        //前ユーザー数を取得
+        $userCount = $users->count(); 
+        //現在ログインしているユーザーを取得
+        $from_user_id = Auth::id(); 
 
-        return view('home', compact('users')); 
+        return view('home', compact('users', 'userCount', 'from_user_id')); 
     }
 }

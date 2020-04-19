@@ -15,8 +15,8 @@ class CreateReactionsTable extends Migration
     {
         Schema::create('reactions', function (Blueprint $table) {
            $table->Integer('to_user_id'); 
-            $table->Integer('from_user_id'); 
-            $table->Integer('status'); 
+           $table->Integer('from_user_id'); 
+           $table->Integer('status'); 
         });
     }
 
