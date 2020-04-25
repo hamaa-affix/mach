@@ -24,3 +24,5 @@ Route::group(['prefix' => 'users', 'middleware' => 'auth'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/matching', 'MatchingController@index')->name('matching');
