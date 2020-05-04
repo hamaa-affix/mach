@@ -13,7 +13,8 @@ use App\Constants\Status;
 class MatchingController extends Controller
 {
     public static function index(){
-
+        
+        
         $got_reaction_ids = Reaction::where([
             //リレーションされた、userid と to_userid、sutatus = Likeが一致したものを取得
             ['to_user_id', Auth::id()], 
