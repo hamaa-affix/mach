@@ -69,4 +69,16 @@ class ChatController extends Controller
         'chat_messages','chat_room_user_name'));
     
     }
+    
+    //chat機能の実装
+    public static function chat(Request $request){
+
+        $chat = new ChatMessage();
+        $chat->chat_room_id = $request->chat_room_id;
+        $chat->user_id = $request->user_id;
+        $chat->message = $request->message;
+        $chat->save();
+
+        event(new ChatPusher($chat));
+    }
 }
